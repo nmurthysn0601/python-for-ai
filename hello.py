@@ -1,13 +1,12 @@
-class Dog:
-    def __init__(self, name):
-        self.name = name
+from dotenv import load_dotenv
+import os
 
-    def bark(self):
-        print("Bark!!!")
+# Load the .env file
+load_dotenv()
 
+# Now use your variables
+api_key = os.environ.get("API_KEY")
+debug = os.environ.get("DEBUG")
 
-jerry = Dog(name="Jerry")
-
-print(jerry.name)
-print(jerry.bark())
-print("hello")
+print(f"API Key: {api_key}")
+print(f"Debug mode: {debug}")
